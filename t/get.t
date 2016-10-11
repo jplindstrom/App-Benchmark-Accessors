@@ -18,6 +18,7 @@ my $ClassAccessorConstructor = WithClassAccessorConstructor->new;
 my $ClassAccessorLite        = WithClassAccessorLite->new;
 my $ClassAccessorClassy      = WithClassAccessorClassy->new;
 my $Mojo                     = WithMojo->new;
+my $Moo                      = WithMoo->new;
 my $ClassMethodMaker         = WithClassMethodMaker->new;
 my $Accessors                = WithAccessors->new;
 my $ObjectTiny               = WithObjectTiny->new;
@@ -32,7 +33,8 @@ my $Rose                     = WithRose->new;
 my $RubyishAttribute = WithRubyishAttribute->new;
 benchmark_diag(
     $iterations,
-    {   moose                      => sub { $Moose->myattr },
+    {
+        moose                      => sub { $Moose->myattr },
         moose_immutable            => sub { $MooseImmutable->myattr },
         mouse                      => sub { $Mouse->myattr },
         mouse_immutable            => sub { $MouseImmutable->myattr },
@@ -45,6 +47,7 @@ benchmark_diag(
         class_accessor_lite        => sub { $ClassAccessorLite->myattr },
         class_accessor_classy      => sub { $ClassAccessorClassy->myattr },
         mojo                       => sub { $Mojo->myattr },
+        moo                        => sub { $Moo->myattr },
         class_methodmaker          => sub { $ClassMethodMaker->myattr },
         object_tiny                => sub { $ObjectTiny->myattr },
         accessors                  => sub { $Accessors->myattr },

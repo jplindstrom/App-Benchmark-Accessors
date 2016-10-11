@@ -4,10 +4,11 @@ use strict;
 use App::Benchmark;
 use App::Benchmark::Accessors;
 my $iterations = shift;
-$iterations ||= 200_000;
+$iterations ||= 1_000_000;
 benchmark_diag(
     $iterations,
-    {   moose                      => sub { WithMoose->new },
+    {
+        moose                      => sub { WithMoose->new },
         moose_immutable            => sub { WithMooseImmutable->new },
         mouse                      => sub { WithMouse->new },
         mouse_immutable            => sub { WithMouseImmutable->new },
@@ -19,6 +20,7 @@ benchmark_diag(
         class_accessor_lite        => sub { WithClassAccessorLite->new },
         class_accessor_classy      => sub { WithClassAccessorClassy->new },
         mojo                       => sub { WithMojo->new },
+        moo                        => sub { WithMoo->new },
         class_methodmaker          => sub { WithClassMethodMaker->new },
         object_tiny                => sub { WithObjectTiny->new },
         spiffy                     => sub { WithSpiffy->new },

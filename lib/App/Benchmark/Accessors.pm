@@ -21,6 +21,11 @@ use Mouse;
 has myattr => ( is => 'rw' );
 
 package    # hide from PAUSE
+  WithMoo;
+use Moo;
+has myattr => ( is => 'rw' );
+
+package    # hide from PAUSE
   WithMouseImmutable;
 use Mouse;
 has myattr => ( is => 'rw' );
@@ -160,6 +165,10 @@ mutable and immutable
 =item Mouse
 
 mutable and immutable
+
+=item Moo
+
+Note: with Moose loaded
 
 =item Class::Accessor
 
