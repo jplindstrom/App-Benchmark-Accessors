@@ -15,6 +15,10 @@ following generators are being benchmarked:
 
     mutable and immutable
 
+- Moo
+
+    Note: with Moose loaded
+
 - Class::Accessor
 - Class::Accessor::Fast
 - Class::Accessor::Fast::XS
